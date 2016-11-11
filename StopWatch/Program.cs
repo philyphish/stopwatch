@@ -6,28 +6,20 @@ using System.Threading.Tasks;
 
 namespace StopWatch
 {
-    class Program
+   public class Program
     {
         static void Main(string[] args)
         {
-            DateTime startTime;
-            DateTime endTime;
             string userInput;
-            TimeSpan elapsTime;
-
             Console.WriteLine("Enter start: ");
             userInput = Console.ReadLine();
 
-            while (userInput != "stop")
-            {
-                startTime = DateTime.Now;
-                Console.ReadLine();
-                endTime = DateTime.Now;
-                elapsTime = endTime - startTime;
-                Console.WriteLine("The elaps time is {0}" , elapsTime + " Press enter to start the timer again and type stop to stop");
-                userInput = Console.ReadLine().ToLower();
 
-            }
+            var sw = new Class1();
+            sw.userInput = userInput;
+
+            sw.myTimmer();
+            
 
 
 
