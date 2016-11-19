@@ -8,22 +8,28 @@ namespace StopWatch
 {
     public class Class1
     {
-        DateTime startTime;
-        DateTime endTime;
-        public string userInput;
-        TimeSpan elapsTime;
+        private DateTime _startTime;
+        private DateTime _endTime;
+        private string _userInput;
+        private TimeSpan _elapsTime;
+        
 
-            
+        public string UserInput
+        {
+            get { return _userInput; }
+            set { _userInput = value; }
+        }
+
         public void myTimmer() {
-            while (userInput != "stop")
+            while (_userInput != "stop")
             {
-                startTime = DateTime.Now;
+                _startTime = DateTime.Now;
                 Console.WriteLine("running...");
                 Console.ReadLine();
-                endTime = DateTime.Now;
-                elapsTime = endTime - startTime;
-                Console.WriteLine("The elaps time is {0}", elapsTime + " Press enter to start the timer again and type stop to stop");
-                userInput = Console.ReadLine().ToLower();
+                _endTime = DateTime.Now;
+                _elapsTime = _endTime - _startTime;
+                Console.WriteLine("The elaps time is {0}", _elapsTime + " Press enter to start the timer again and type stop to stop");
+                _userInput = Console.ReadLine().ToLower();
             }
     }
 }
